@@ -400,7 +400,7 @@ function showScreen(id){
 function goHome(){ showScreen("home"); }
 
 renderHome();
-if(state.last){ var r=RECIPES.filter(function(x){return x.id===state.last;})[0]; if(r && !r.placeholder) openRecipe(state.last); }
+// Always start on the home page (recipe list).
 </script>
 </body>
 </html>
