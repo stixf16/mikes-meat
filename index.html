@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mike's Meat">
@@ -326,7 +326,7 @@ function renderHome(){
 var current=null;
 function openRecipe(id){
   var r=RECIPES.filter(function(x){return x.id===id;})[0]; if(!r) return;
-  current=r; state.last=id; save();
+  current=r;
   document.getElementById("rName").textContent=r.name;
   document.getElementById("rSub").textContent=r.placeholder?"Coming soon":(r.subtitle||"");
   var body=document.getElementById("recipeBody");
@@ -400,7 +400,9 @@ function showScreen(id){
 function goHome(){ showScreen("home"); }
 
 renderHome();
-// Always start on the home page (recipe list).
+// Always start on the home page (recipe list) — never reopen the last recipe.
+state.last = null; save();
+showScreen("home");
 </script>
 </body>
 </html>
