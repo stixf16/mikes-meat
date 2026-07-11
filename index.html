@@ -135,7 +135,7 @@
     </div>
   </div>
   <div class="list" id="recipeList"></div>
-  <div class="foot">Pick a recipe &middot; scale it &middot; cook &#127482;&#127480;</div>
+  <div class="foot">Pick a recipe &middot; scale it &middot; cook &#127482;&#127480;<br><span style="text-transform:none;letter-spacing:.02em;color:var(--scarlet-dark);">Half Man, Half Code &mdash; StixF16</span></div>
 </div>
 
 <!-- ============ RECIPE ============ -->
@@ -172,17 +172,29 @@ var RECIPES = [
     ingredients:[
       {item:"Meat",                amount:3,      unit:"lb"},
       {item:"Salt",                amount:1,      unit:"Tbsp"},
-      {item:"Pepper",              amount:0.5,    unit:"tsp"},
+      {item:"Pepper",              amount:1,      unit:"tsp"},
       {item:"Worcestershire sauce",amount:1/3,    unit:"cup"},
       {item:"Soy sauce",           amount:0.25,   unit:"cup"},
       {item:"Onion powder",        amount:1,      unit:"tsp"},
       {item:"Garlic powder",       amount:1,      unit:"tsp"}
     ]
   },
-  { id:"r2", name:"Texas",        placeholder:true },
-  { id:"r3", name:"Lime Tajin",   placeholder:true },
-  { id:"r4", name:"Salt & Pepper",placeholder:true },
-  { id:"r5", name:"Armadillo",    placeholder:true }
+  {
+    id:"armadillo",
+    name:"Armadillo",
+    subtitle:"Lime Taj\u00EDn jerky",
+    scaleLabel:"lbs of meat",
+    baseScale:3,          // scaled from the 2 lb source recipe (x1.5)
+    step:1,
+    quick:[3,6,9,12,69,100,200],
+    ingredients:[
+      {item:"Meat",                       amount:3,     unit:"lb"},
+      {item:"Taj\u00EDn Cl\u00E1sico seasoning", amount:5.25, unit:"Tbsp"},
+      {item:"Lime juice",                 amount:3/8,   unit:"cup"},
+      {item:"Soy sauce (Tamari for gluten free)", amount:3/4, unit:"cup"},
+      {item:"Worcestershire sauce",       amount:3,     unit:"Tbsp"}
+    ]
+  }
 ];
 
 /* ---------- nice cooking fractions (snaps to eighths & thirds) ---------- */
